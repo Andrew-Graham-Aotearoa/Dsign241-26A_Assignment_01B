@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <!-- Google Fonts ─────────────────────────────────────────────
+       1. Go to https://fonts.google.com and select your typeface(s)
+          — a maximum of two, ideally one — before proceeding.
+       2. Click "Get font" → "Get embed code" → choose <link>.
+          Google Fonts combines multiple selections into one URL.
+       3. Paste the <link> line below, replacing the placeholder href.
+          No @import in css/styles.css is needed — this handles it.
+  ─────────────────────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- TODO: replace "Site Title" with your site name -->
+  <title>Style Guide — Pop-Art Exhibit Companion</title>
+</head>
+
+<body>
+
+  <!-- ======== HEADER ======== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- TODO: replace "Site Title" with your site name -->
+      <a href="../index.html" class="site-logo"><img src="../images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
+      <nav>
+        <ul class="site-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======== MAIN CONTENT ======== -->
+  <main>
+
+    <!-- Intro -->
+    <section>
+      <div class="container">
+        <h1>Style Guide</h1>
+        <div class="textbox">
+          <p>
+            The design decisions behind this site — typefaces, colours, and imagery.
+            Update the values in <code>css/styles.css</code> and this page reflects
+            them automatically.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- TYPEFACES ---- -->
+    <section>
+
+      <div class="container">
+
+        <h2>Typefaces</h2>
+        <div class="textbox">
+
+          <div class="type-specimen">
+            <p class="type-specimen__meta">--font-heading &mdash; headings, logo</p>
+            <p style="font-family: var(--font-heading); font-size: var(--text-2xl); line-height: var(--leading-tight);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+
+          <div class="type-specimen">
+            <p class="type-specimen__meta">--font-body &mdash; body copy, navigation</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-normal);">
+              The quick brown fox jumps over the lazy dog.
+              Pack my box with five dozen liquor jugs.
+              How vexingly quick daft zebras jump.
+            </p>
+          </div>
+        </div>
+
+        <h3>Type Scale</h3>
+        <div class="textbox">
+          <div>
+            <div class="type-scale-row">
+              <span class="type-scale-row__label">--text-sm &nbsp;·&nbsp; 0.875rem</span>
+              <span style="font-size: var(--text-sm);">The quick brown fox jumps over the lazy dog</span>
+            </div>
+            <div class="type-scale-row">
+              <span class="type-scale-row__label">--text-base &nbsp;·&nbsp; 1rem</span>
+              <span style="font-size: var(--text-base);">The quick brown fox jumps over the lazy dog</span>
+            </div>
+            <div class="type-scale-row">
+              <span class="type-scale-row__label">--text-lg &nbsp;·&nbsp; 1.25rem</span>
+              <span style="font-size: var(--text-lg);">The quick brown fox jumps over the lazy dog</span>
+            </div>
+            <div class="type-scale-row">
+              <span class="type-scale-row__label">--text-xl &nbsp;·&nbsp; 1.5rem</span>
+              <span style="font-size: var(--text-xl);">The quick brown fox jumps</span>
+            </div>
+            <div class="type-scale-row">
+              <span class="type-scale-row__label">--text-2xl &nbsp;·&nbsp; 2rem</span>
+              <span style="font-size: var(--text-2xl);">The quick brown fox</span>
+            </div>
+            <div class="type-scale-row">
+              <span class="type-scale-row__label">--text-3xl &nbsp;·&nbsp; 2.5rem</span>
+              <span style="font-size: var(--text-3xl);">The quick brown fox</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- COLOUR PALETTE ---- -->
+    <section>
+      <div class="container">
+        <h2>Colour Palette</h2>
+
+        <div class="swatch-grid">
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-bg);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-bg</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-bg-alt);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-bg-alt</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-text);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-text</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-primary);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-primary</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-secondary);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-secondary</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-accent);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-accent</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-muted);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-muted</span></div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch__block" style="background-color: var(--color-border);"></div>
+            <div class="swatch__label"><span class="swatch__name">--color-border</span></div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- IMAGERY ---- -->
+    <section>
+      <div class="container">
+        <h2>Imagery</h2>
+        <div class="textbox">
+          <p>
+            Describe the visual style of your imagery here — subject matter,
+            mood, colour treatment, and any consistent photographic or
+            illustrative style.
+          </p>
+        </div>
+        <div class="imagery-grid">
+          <div>
+            <p class="sg-label">16 / 9 &mdash; Landscape</p>
+            <div class="placeholder">Hero &amp; feature images</div>
+          </div>
+          <div>
+            <p class="sg-label">1 / 1 &mdash; Square</p>
+            <div class="placeholder placeholder--square">Grid thumbnails</div>
+          </div>
+          <div>
+            <p class="sg-label">3 / 4 &mdash; Portrait</p>
+            <div class="placeholder placeholder--portrait">Profile &amp; detail</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- VALIDATE ---- -->
+    <section>
+      <div class="container">
+        <h2>Validate your HTML</h2>
+        <div class="textbox">
+          <p>
+            Before you submit, check every page at
+            <a href="https://validator.w3.org" target="_blank" rel="noopener">validator.w3.org</a>.
+            Paste the full HTML of each page into the validator and fix any errors or warnings it reports.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="site-footer">
+    <div class="textbox">
+      <div class="container">
+
+        <!-- TODO: replace "Your Name" with your name -->
+        <p>
+          &copy; 2026 | DSIGN241 - Assignment 1 | Team 2 |
+          <br> Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, Toby Childs
+        </p>
+        <br>
+        <p>
+          <a href="style-guide.html" aria-current="page">Style Guide</a>
+          &nbsp;|&nbsp;
+          <a href="checklist.html">Checklist</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

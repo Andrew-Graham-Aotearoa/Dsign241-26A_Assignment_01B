@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <!-- Google Fonts ─────────────────────────────────────────────
+       1. Go to https://fonts.google.com and select your typeface(s)
+          — a maximum of two, ideally one — before proceeding.
+       2. Click "Get font" → "Get embed code" → choose <link>.
+          Google Fonts combines multiple selections into one URL.
+       3. Paste the <link> line below, replacing the placeholder href.
+          No @import in css/styles.css is needed — this handles it.
+  ─────────────────────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- TODO: replace "Site Title" with your site name -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Checklist — Pop-Art Exhibit Companion</title>
+</head>
+
+<body>
+
+  <!-- ======== HEADER ======== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- TODO: replace "Site Title" with your site name -->
+      <a href="../index.html" class="site-logo"><img src="../images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
+      <nav>
+        <ul class="site-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======== MAIN CONTENT ======== -->
+  <main>
+
+    <section>
+      <div class="container">
+        <h1>Checklist</h1>
+
+        <div class="callout">
+          <p><strong>This brochure site is not the final product.</strong></p>
+          <p>
+            Its purpose is to test whether your Style Guide decisions — typefaces,
+            colours, imagery — work together coherently in a real context. Think of
+            it as a design proof: if the brochure feels right, your visual system is
+            ready to carry a full-scale site. The actual deliverable for your chosen
+            brief would be a much larger, fully featured website. Use this exercise
+            to validate your design system before committing to it.
+          </p>
+          <p>
+            You should already have your brief chosen and a PDF with your type
+            and colour decisions. Use that PDF as your reference throughout.
+          </p>
+        </div>
+
+        <!-- Step 1 -->
+        <h2>1. Fonts</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox" checked=""> Go to <a href="https://fonts.google.com" target="_blank"
+                rel="noopener">fonts.google.com</a> and choose your typeface(s) — a maximum of two, ideally one — that
+              suit the tone of your organisation.</label></li>
+          <li><label><input type="checkbox" checked=""> Click <strong>Get font → Get embed code → choose
+                &lt;link&gt;</strong>.
+              Paste the <code>&lt;link&gt;</code> line into the Google Fonts block in every HTML file, replacing the
+              placeholder <code>href</code>. Do not add an <code>@import</code> to <code>styles.css</code>.</label></li>
+          <li><label><input type="checkbox" checked=""> In <code>css/styles.css</code>, update
+              <code>--font-heading</code> and
+              <code>--font-body</code> with your font name(s). If using one typeface for both, set both variables to the
+              same value.</label></li>
+        </ul>
+
+        <!-- Step 2 -->
+        <h2>2. Colours</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox" checked=""> Update <code>--color-bg</code> — page background.</label></li>
+          <li><label><input type="checkbox" checked=""> Update <code>--color-bg-alt</code> — tinted section background
+              (add
+              <code>class="section--tinted"</code> to any <code>&lt;section&gt;</code> you want to stand out).</label>
+          </li>
+          <li><label><input type="checkbox" checked=""> Update <code>--color-text</code> — main body text.</label></li>
+          <li><label><input type="checkbox" checked=""> Update <code>--color-primary</code> — headings.</label></li>
+          <li><label><input type="checkbox" checked=""> Update <code>--color-secondary</code> — captions, labels, muted
+              text.</label></li>
+          <li><label><input type="checkbox" checked=""> Update <code>--color-accent</code> — links and
+              highlights.</label></li>
+          <li><label><input type="checkbox" checked=""> Update <code>--color-muted</code> and
+              <code>--color-border</code> to
+              complement your palette.</label></li>
+          <li><label><input type="checkbox" checked=""> Open <a href="style-guide.html">Style Guide</a> and confirm the
+              swatches
+              look right.</label></li>
+        </ul>
+
+        <!-- Step 3 -->
+        <h2>3. Site identity — every page</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox" checked=""> Replace <code>Site Title</code> in the
+              <code>&lt;title&gt;</code> tag on
+              each page.</label></li>
+          <li><label><input type="checkbox" checked=""> Replace <code>Site Title</code> in the site logo link on each
+              page.</label>
+          </li>
+          <li><label><input type="checkbox" checked=""> Replace <code>Your Name</code> in the footer on each
+              page.</label></li>
+        </ul>
+
+        <!-- Step 4 -->
+        <h2>4. Home page</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox" checked=""> Write a clear mission statement or value proposition as the
+              <code>&lt;h1&gt;</code>.</label></li>
+          <li><label><input type="checkbox" checked=""> Write the hero paragraph: what problem does this organisation
+              solve, and
+              for whom?</label></li>
+          <li><label><input type="checkbox" checked=""> Replace the hero placeholder with an appropriate image.</label>
+          </li>
+          <li><label><input type="checkbox" checked=""> Fill in <em>The Problem</em> and <em>Our Solution</em> columns
+              from your
+              brief.</label></li>
+          <li><label><input type="checkbox"> Fill in the three <em>Why It Works</em> benefit cards with specific,
+              grounded reasons.</label></li>
+        </ul>
+
+        <!-- Step 5 -->
+        <h2>5. About page</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Replace the portrait placeholder with a team or organisation photo.</label>
+          </li>
+          <li><label><input type="checkbox" checked=""> Write the about text: who is behind this organisation, what
+              values guide
+              it?</label></li>
+        </ul>
+
+        <!-- Step 6 -->
+        <h2>6. Services page</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Update the <code>&lt;h1&gt;</code> if "Services" does not fit your brief
+              (e.g. "Platform", "How It Works", "Programmes").</label></li>
+          <li><label><input type="checkbox" checked=""> Write the intro paragraph for this page.</label></li>
+          <li><label><input type="checkbox"> Fill each card with a specific service, feature, or programme from your
+              brief.</label></li>
+          <li><label><input type="checkbox"> Add or remove cards as needed. Switch to <code>.grid--3-col</code> if you
+              have more items.</label></li>
+        </ul>
+
+        <!-- Step 7 -->
+        <h2>7. Get Involved page</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Update the <code>&lt;h1&gt;</code> to match your call to action (e.g.
+              "Partner With Us", "Invest", "Volunteer").</label></li>
+          <li><label><input type="checkbox"> Write copy for each relevant stakeholder group — investors, partners,
+              volunteers, or users.</label></li>
+          <li><label><input type="checkbox"> Replace the placeholder with an appropriate image.</label></li>
+        </ul>
+
+        <!-- Step 8 -->
+        <h2>8. Style Guide</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Write the Imagery description paragraph: what visual style and mood suits
+              this organisation?</label></li>
+          <li><label><input type="checkbox"> Confirm that the type specimens and colour swatches correctly reflect your
+              design decisions.</label></li>
+        </ul>
+
+        <!-- Step 9 -->
+        <h2>9. Imagery — all pages</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Replace every <code>&lt;div class="placeholder"&gt;</code> with a real
+              <code>&lt;img src="..." alt="..."&gt;</code>.</label></li>
+          <li><label><input type="checkbox"> Save images in <code>images/</code> and use relative paths (e.g.
+              <code>../images/photo.jpg</code> from inside <code>pages/</code>).</label></li>
+          <li><label><input type="checkbox"> Replace <code>images/favicon.svg</code> with your own favicon.</label></li>
+        </ul>
+
+        <!-- Step 10 -->
+        <h2>10. Before you submit</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Validate every page at <a href="https://validator.w3.org" target="_blank"
+                rel="noopener">validator.w3.org</a> — no errors, no warnings.</label></li>
+          <li><label><input type="checkbox"> Check the site on a narrow screen (mobile) and a wide screen
+              (desktop).</label></li>
+          <li><label><input type="checkbox"> Confirm all links work, including the footer links.</label></li>
+          <li><label><input type="checkbox"> ZIP the contents of <code>site/</code> and submit to Moodle.</label></li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="site-footer">
+    <div class="textbox">
+      <div class="container">
+        <!-- TODO: replace "Your Name" with your name -->
+        <p>
+          &copy; 2026 | DSIGN241 - Assignment 1 | Team 2 |
+          <br> Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, Toby Childs
+        </p>
+        <br>
+        <p>
+          <a href="style-guide.html">Style Guide</a>
+          &nbsp;|&nbsp;
+          <a href="checklist.html" aria-current="page">Checklist</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
