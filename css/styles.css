@@ -31,7 +31,7 @@
      to the same font name. */
   --font-heading: "Bangers", serif;
   --font-body: "Roboto", sans-serif;
-/* Adding dots to the bg */
+  /* Adding dots to the bg */
   --color-dots: rgba(255, 255, 255, 0.05);
 
   /* Type Scale 
@@ -61,7 +61,7 @@
   --color-primary: #ee2b2f;
   --color-secondary: #231f20;
   --color-accent: #00aeef;
-  --color-muted: #fdf5e680;
+  --color-muted: #ffffff80;
   --color-border: #231f20;
 
   /* Spacing Scale 
@@ -174,11 +174,24 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-text);
-  
+
   /* The Ben-Day Dot Pattern */
   background-color: var(--color-bg);
   background-image: radial-gradient(var(--color-dots) 3px, transparent 1px);
-  background-size: 15px 15px; /* Adjust this to make dots closer or further apart */
+  background-size: 15px 15px;
+  /* Adjust this to make dots closer or further apart */
+
+
+
+  /* ---- This should make the footer stay at the bottom of the page ---- */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  /*------ also for making footer stay at bottom ------ */
+  flex: 1;
 }
 
 /* textbox class for text content */
@@ -192,6 +205,24 @@ body {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: var(--space-md);
+  margin-top: 0;
+  text-align: left;
+  justify-content: left;
+  border-radius: 0;
+}
+/* --- seperate text box class for breaking up large blocks of text, works as either a p element class
+or a div element class around a p element, (it has different paddings and margins from regular textbox) --- */
+.p_textbox {
+  color: var(--color-text);
+  display: flex;
+  border: 3px var(--color-border);
+  background-color: var(--color-bg-alt);
+  padding-bottom: var(--space-xs);
+  padding-right: var(--space-sm);
+  padding-left: var(--space-md);
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: var(--space-base);
   margin-top: 0;
   text-align: left;
   justify-content: left;
@@ -300,7 +331,7 @@ section {
   padding-block: var(--space-2xl);
 }
 
-section + section {
+section+section {
   border-top: var(--border-width) solid var(--color-border);
 }
 
@@ -321,7 +352,7 @@ section + section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(170, 164, 164); 
+  background-color: rgb(170, 164, 164);
   font-size: var(--text-sm);
   border-radius: 0;
 }
@@ -392,8 +423,6 @@ section + section {
   flex-direction: column;
   align-items: center;
   text-align: left;
-
-  /* -- make footer stay at bottom of page*/
 }
 
 .site-footer a {
@@ -406,9 +435,9 @@ section + section {
 }
 
 .site-footer p {
-width: 100%;
-max-width: var(--max-width);
-margin-bottom: var(--space-sm);
+  width: 100%;
+  max-width: var(--max-width);
+  margin-bottom: var(--space-sm);
 }
 
 .links {
@@ -491,11 +520,14 @@ margin-bottom: var(--space-sm);
 /* Imagery */
 .imagery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  grid-template-columns: repeat(3, minmax(14rem, 1fr));
   gap: var(--space-lg);
   margin-top: var(--space-md);
+  padding: var(--space-md);
   background-color: var(--color-bg-alt);
+  align-items: center;
 }
+
 
 .sg-label {
   font-size: var(--text-sm);
@@ -520,6 +552,7 @@ margin-bottom: var(--space-sm);
 
 /* --- Medium screens (≥ 768px) ----------------------------- */
 @media (min-width: 48em) {
+
   .grid--2-col,
   .grid--sidebar {
     /* These grids collapse to 1 column on mobile;
@@ -545,6 +578,7 @@ margin-bottom: var(--space-sm);
 
 /* --- Stacked grids on mobile ------------------------------ */
 @media (max-width: 47.99em) {
+
   .grid--2-col,
   .grid--3-col,
   .grid--sidebar {
