@@ -82,7 +82,7 @@
 
   /* Borders & Radius */
   --radius: 0.25rem;
-  --border-width: 1px;
+  --border-width: 0.065rem;
 }
 
 /* ============================================================
@@ -179,7 +179,7 @@ body {
   /* The Ben-Day Dot Pattern */
   background-color: var(--color-bg);
   background-image: radial-gradient(var(--color-dots) 3px, transparent 1px);
-  background-size: 15px 15px;
+  background-size: 0.938rem 0.938rem;
   /* Adjust this to make dots closer or further apart */
 
 
@@ -211,12 +211,13 @@ main {
   justify-content: left;
   border-radius: 0;
 }
+
 /* --- seperate text box class for breaking up large blocks of text, works as either a p element class
 or a div element class around a p element, (it has different paddings and margins from regular textbox) --- */
 .p_textbox {
   color: var(--color-text);
   display: flex;
-  border: 3px var(--color-border);
+  border: 0.188rem var(--color-border);
   background-color: var(--color-bg-alt);
   padding-bottom: var(--space-xs);
   padding-right: var(--space-sm);
@@ -347,13 +348,12 @@ section+section {
    to insert an image. Replace with an <img> when ready.
    ---------------------------------------------------------- */
 .placeholder {
-  background-color: var(--color-muted);
   border: 3px var(--color-border);
   aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(170, 164, 164);
+  background-color: #808080;
   font-size: var(--text-sm);
   border-radius: 0;
 }
@@ -371,7 +371,7 @@ section+section {
    ---------------------------------------------------------- */
 .callout {
   background-color: var(--color-bg-alt);
-  border-left: 4px solid var(--color-accent);
+  border-left: 0.25 solid var(--color-accent);
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius);
   margin-bottom: var(--space-xl);
