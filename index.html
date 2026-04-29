@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- Favicon — replace with your own -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-
   <!-- Google Fonts ─────────────────────────────────────────────
        1. Go to https://fonts.google.com and select your typeface(s)
           — a maximum of two, ideally one — before proceeding.
@@ -19,136 +17,190 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- TODO: uncomment the line below and replace the href with your Google Fonts URL -->
-
   <link
     href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
-
+  <!-- The Stylesheet Commented out to use Tailwind...-->
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
   <!-- TODO: replace "Site Title" with your site name -->
   <title>Home — Pop-Art Exhibit Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#ee2b2f',
+            'brand-bg': '#231f20',
+          },
+          fontFamily: {
+            heading: ['Bangers', 'serif'],
+            body: ['Roboto', 'sans-serif'],
+          },
+          colors: {
+            'pop-red': '#ee2b2f',
+            'color-accent': '#00aeef',
+            'color-muted': '#ffffff80',
+            'color-border': '#231f20',
+            'color-bg-alt': '#fdf5e6',
+            'color-bg': '#231f20',
+            'color-dots': 'rgba(255, 255, 255, 0.05)',
+          },
+          backgroundImage: {
+            'pop-dots': "radial-gradient(rgba(255, 255, 255, 0.05) 3px, transparent 1px)",
+          },
+          backgroundSize: {
+            'dots-sm': '0.938rem 0.938rem',
+          },
+          spacing: {
+            'section_v': '4rem',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-
 <body>
-
-  <!-- ======== HEADER ======== -->
-  <header class="site-header">
-    <div class="container">
+  <div class="bg-color-bg bg-pop-dots bg-dots-sm grid grid-rows-[auto_1fr_auto] min-h-screen">
+    <!-- ======== HEADER ======== -->
+    <header class="bg-[#fdf5e6] border-b border-[#231f20]">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
       <!-- TODO: replace "Site Title" with your site name -->
-      <a href="index.html" class="site-logo"><img src="images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
-      <nav>
-        <ul class="site-nav">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/services.html">Services</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="flex items-center">
+  <img
+    src="images/mosaic_logo.png"
+    alt="The Mosaic Museum Of Art"
+    class="h-10 w-auto object-contain"
+  >
+</a>
+<nav class="hidden md:block">
+  <ul class="flex gap-6 uppercase text-sm tracking-wider">
+    <li><a href="index.html" class="nav-link hover:text-[#00aeef] transition">Home</a></li>
+    <li><a href="pages/about.html" class="nav-link hover:text-[#00aeef] transition">About</a></li>
+    <li><a href="pages/services.html" class="nav-link hover:text-[#00aeef] transition">Services</a></li>
+    <li><a href="pages/contact.html" class="nav-link hover:text-[#00aeef] transition">Contact</a></li>
+  </ul>
+</nav>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+  ☰
+</button>
+     <ul id="mobileMenu"
+    class="hidden flex flex-col gap-3 mt-4 md:hidden bg-[#fdf5e6] p-4 text-sm md:text-base">
+  <li><a class="nav-link hover:text-[#00aeef]" href="index.html">Home</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="pages/about.html">About</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="pages/services.html">Services</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="pages/contact.html">Contact</a></li>
+</ul>
+      
     </div>
   </header>
-
-  <!-- ======== MAIN CONTENT ======== -->
-  <main>
-
-    <!-- Hero Section — mission statement and value proposition -->
-    <section>
-      <div class="container">
-        <!-- TODO: replace with the organisation's name or mission statement -->
-        <h1>Pop-Art Exhibit Companion</h1>
-        <h2>Due Date: Friday, 27 March 2026, 7:00 </h2>
-        <div class="textbox">
-          <p>
-            Museum Exhibit Companion transforms a Pop Art exhibition into an accessible,
-            layered learning experience reducing information overload while giving children,
-            everyday visitors, and experts content tailored to their level. It serves museum
-            audiences by offering quick highlights, deeper insights, and optional expert material
-            in a lightweight, easy-to-navigate format that enhances engagement without disrupting the visit.
-          </p>
-        </div>
-        <div class="placeholder"><img src="images/pop_hero.jpg" alt="Pop Art Hero Image">
-        </div>
-      </div>
-    </section>
-
-    <!-- The Problem & The Solution (2-column) -->
-    <section>
-      <div class="container">
-        <h2>The Problem &amp; Our Solution</h2>
-        <div class="grid grid--2-col">
-          <div>
-            <h3>The Problem</h3>
-            <div class="textbox">
-              <p>
-                Museum exhibitions, especially visually dense ones like Pop Art often
-                overwhelm visitors with too much information in a limited time and space.
-                Audiences with different levels of knowledge (children, casual visitors,
-                and experts) struggle to find content that matches their needs, while important
-                practical information like navigation, accessibility, and planning can be hard
-                to access without disrupting the experience.
-              </p>
+    
+    <div class="px-8 py-12 md:px-20 lg:px-72">
+      <!-- ======== MAIN CONTENT ======== -->
+      <main>
+        <!-- Hero Section — mission statement and value proposition -->
+        <section>
+          <!-- TODO: replace with the organisation's name or mission statement -->
+          <h1 class="font-heading text-6xl text-pop-red py-section_v"> Pop-Art Exhibit Companion</h1>
+          <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p>
+              Museum Exhibit Companion transforms a Pop Art exhibition into an accessible,
+              layered learning experience reducing information overload while giving children,
+              everyday visitors, and experts content tailored to their level. It serves museum
+              audiences by offering quick highlights, deeper insights, and optional expert material
+              in a lightweight, easy-to-navigate format that enhances engagement without disrupting
+              the
+              visit.
+            </p>
+          </div>
+          <div class="py-section_v">
+            <div class="border-4 border-black overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <img src="images/pop_hero.jpg" alt="Pop Art Hero Image">
             </div>
           </div>
-          <div>
-            <h3>Our Solution</h3>
-            <div class="textbox">
-              <p>
-                Our Museum Exhibit Companion will provide a lightweight, digital layer that
-                organises content into clear, accessible levels from quick highlights to
-                in-depth expert insights allowing visitors to engage at their own pace.
-                It seamlessly integrates interpretive content with practical visit tools,
-                creating a cohesive experience that supports learning, improves flow, and
-                feels like a natural extension of the exhibition.
-              </p>
+        </section>
+        <!-- The Problem & The Solution (2-column) -->
+        <section>
+          <h2 class="font-heading text-3xl text-pop-red">The Problem &amp; Our Solution</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 py-section_v">
+            <div class="flex flex-col h-full group">
+              <h3 class="font-heading text-2xl text-pop-red">The Problem</h3>
+              <div class="bg-color-bg-alt flex-grow p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <p>
+                  Museum exhibitions, especially visually dense ones like Pop Art often
+                  overwhelm visitors with too much information in a limited time and space.
+                  Audiences with different levels of knowledge (children, casual visitors,
+                  and experts) struggle to find content that matches their needs, while important
+                  practical information like navigation, accessibility, and planning can be hard
+                  to access without disrupting the experience.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col h-full group">
+              <h3 class="font-heading text-2xl text-pop-red">Our Solution</h3>
+              <div class="bg-color-bg-alt flex-grow p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <p>
+                  Our Museum Exhibit Companion will provide a lightweight, digital layer that
+                  organises content into clear, accessible levels from quick highlights to
+                  in-depth expert insights allowing visitors to engage at their own pace.
+                  It seamlessly integrates interpretive content with practical visit tools,
+                  creating a cohesive experience that supports learning, improves flow, and
+                  feels like a natural extension of the exhibition.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Benefits (3-column) -->
-    <section>
-      <div class="container">
-        <h2>Why It Works</h2>
-        <div class="grid grid--3-col">
-          <div>
-            <div class="placeholder placeholder--square"><img src="images/children.jpg" alt="layered content users"></div>
-            <h3>Layered content done right</h3>
-            <div class="textbox">
-              <p>Instead of overwhelming visitors, the companion separates information into clear levels
-                (kids, general, expert), so each person only sees what they need—making learning feel natural
-                rather than overloaded.</p>
+        </section>
+        <!-- Key Benefits (3-column) -->
+        <section class="py-section_v">
+          <div class="max-w-7xl mx-auto">
+            <h2 class="font-heading text-4xl text-pop-red mb-10 uppercase tracking-tight">Why It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="flex flex-col h-full group">
+                <div class="border-4 border-black overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <img src="images/children.jpg" alt="layered content">
+                </div>
+                <h3 class="font-heading text-2xl text-pop-red mt-6 mb-4 leading-none">Layered content done right</h3>
+                <div class="bg-color-bg-alt flex-grow p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <p class="font-body leading-relaxed text-gray-800">Instead of overwhelming visitors, the companion
+                    separates information into clear levels (kids, general, expert), so each person only sees what
+                    they need.</p>
+                </div>
+              </div>
+              <div class="flex flex-col h-full group">
+                <div class="border-4 border-black overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <img src="images/museuminside.jpg" alt="museum inside">
+                </div>
+                <h3 class="font-heading text-2xl text-pop-red mt-6 mb-4 leading-none">Seamless in-gallery experience
+                </h3>
+                <div class="bg-color-bg-alt flex-grow p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <p class="font-body leading-relaxed text-gray-800">
+                    By creating lightweight pages and
+                    offline-friendly design, our interface works reliably inside the museum, avoiding the user
+                    frustration of poor connectivity.</p>
+                </div>
+              </div>
+              <div class="flex flex-col h-full group">
+                <div class="border-4 border-black overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <img src="images/wheelchair.jpg" alt="planning visitor">
+                </div>
+                <h3 class="font-heading text-2xl text-pop-red mt-6 mb-4 leading-none">Integrated, not distracting</h3>
+                <div class="bg-color-bg-alt flex-grow p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <p class="font-body leading-relaxed text-gray-800">
+                    Visit planning is easy to access without
+                    interrupting the artwork experience, so the companion supports the exhibition instead of competing
+                    with it.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div>
-            <div class="placeholder placeholder--square"><img src="images/museuminside.jpg" alt="inside museum image">
-            </div>
-            <h3>Seamless in-gallery experience</h3>
-            <div class="textbox">
-              <p>By creating lightweight pages and offline-friendly design our interface works reliably inside the
-                museum,
-                avoiding the user frustration many digital companions have with poor connectivity.</p>
-            </div>
-          </div>
-          <div>
-            <div class="placeholder placeholder--square"><img src="images/wheelchair.jpg" alt="Planning visitor"></div>
-            <h3>Integrated, not distracting</h3>
-            <div class="textbox">
-              <p>Visit planning (tickets, accessibility, times) is easy to access without interrupting the
-                artwork experience, so the companion supports the exhibition instead of competing with it.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ======== FOOTER ======== -->
-  <footer class="site-footer">
-    <div class="textbox">
-      <div class="container">
+        </section>
+    </main>
+    </div>
+    <!-- ======== FOOTER ======== -->
+    <footer class="w-screen w-full bg-color-bg-alt border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <div class="flex flex-col items-center text-left bg-color-bg-alt pt-8 pb-8 h-full">
         <!-- TODO: replace "Your Name" with your name -->
         <p>
           &copy; 2026 | DSIGN241 - Assignment 1 | Team 2
@@ -156,15 +208,56 @@
           Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, Toby Childs
         </p>
         <br>
-        <p class="links">
+        <p>
           <a href="pages/style-guide.html">Style Guide</a>
           &nbsp;|&nbsp;
           <a href="pages/checklist.html">Checklist</a>
         </p>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
+  <script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  let open = false;
+  function toggleMenu() 
+  {
+    open = !open;
+    menu.classList.toggle('hidden');
+    btn.style.display = open ? 'none' : 'block';
+  }
+  btn.addEventListener('click', (e) => 
+  {
+    e.stopPropagation(); 
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      if (!menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    }
+  });
+   const links = document.querySelectorAll('.nav-link');
+const currentPath = window.location.pathname;
 
+links.forEach(link => {
+  const href = link.getAttribute('href');
+
+  let cleanHref = href.replace('pages/', '');
+  let cleanPath = currentPath.split('/').pop();
+
+  const isActive =
+    cleanHref === 'index.html'
+      ? cleanPath === '' || cleanPath === 'index.html'
+      : cleanPath === cleanHref;
+
+  if (isActive) {
+    link.classList.add('text-[#00aeef]');
+    link.setAttribute('aria-current', 'page');
+  }
+});
+</script>
 </body>
 
 </html>

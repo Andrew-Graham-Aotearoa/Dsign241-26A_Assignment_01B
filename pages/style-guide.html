@@ -19,6 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- TODO: replace "Site Title" with your site name -->
   <title>Style Guide — Pop-Art Exhibit Companion</title>
 </head>
@@ -26,18 +27,36 @@
 <body>
 
   <!-- ======== HEADER ======== -->
-  <header class="site-header">
-    <div class="container">
+ <header class="bg-[#fdf5e6] border-b border-[#231f20]">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
       <!-- TODO: replace "Site Title" with your site name -->
-      <a href="../index.html" class="site-logo"><img src="../images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
-      <nav>
-        <ul class="site-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <a href="../index.html" class="flex items-center">
+  <img
+    src="../images/mosaic_logo.png"
+    alt="The Mosaic Museum Of Art"
+    class="h-10 w-auto object-contain"
+  >
+</a>
+<nav class="hidden md:block">
+  <ul class="flex gap-6 uppercase text-sm tracking-wider">
+    <li><a href="../index.html" class="nav-link hover:text-[#00aeef] transition">Home</a></li>
+    <li><a href="about.html" class="nav-link hover:text-[#00aeef] transition">About</a></li>
+    <li><a href="services.html" class="nav-link hover:text-[#00aeef] transition">Services</a></li>
+    <li><a href="contact.html" class="nav-link hover:text-[#00aeef] transition">Contact</a></li>
+  </ul>
+</nav>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+  ☰
+</button>
+     <ul id="mobileMenu"
+    class="hidden flex flex-col gap-3 mt-4 md:hidden bg-[#fdf5e6] p-4 text-sm md:text-base">
+  <li><a class="nav-link hover:text-[#00aeef]" href="../index.html">Home</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="about.html">About</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="services.html">Services</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="contact.html">Contact</a></li>
+</ul>
+      
     </div>
   </header>
 
@@ -231,7 +250,48 @@
       </div>
     </div>
   </footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  let open = false;
+  function toggleMenu() 
+  {
+    open = !open;
+    menu.classList.toggle('hidden');
+    btn.style.display = open ? 'none' : 'block';
+  }
+  btn.addEventListener('click', (e) => 
+  {
+    e.stopPropagation(); 
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      if (!menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    }
+  });
+   const links = document.querySelectorAll('.nav-link');
+const currentPath = window.location.pathname;
 
+links.forEach(link => {
+  const href = link.getAttribute('href');
+
+  let cleanHref = href.replace('pages/', '');
+  let cleanPath = currentPath.split('/').pop();
+
+  const isActive =
+    cleanHref === 'index.html'
+      ? cleanPath === '' || cleanPath === 'index.html'
+      : cleanPath === cleanHref;
+
+  if (isActive) {
+    link.classList.add('text-[#00aeef]');
+    link.setAttribute('aria-current', 'page');
+  }
+});
+</script>
 </body>
 
 </html>

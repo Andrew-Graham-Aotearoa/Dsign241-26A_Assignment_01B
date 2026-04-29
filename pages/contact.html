@@ -18,74 +18,136 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Stylesheet is turned off to use Tailwind
+  <link rel="stylesheet" href="../css/styles.css"> -->
   <!-- TODO: replace "Site Title" with your site name -->
   <title>Contact — Pop-Art Exhibit Companion</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#ee2b2f',
+            'brand-bg': '#231f20',
+          },
+          fontFamily: {
+            heading: ['Bangers', 'serif'],
+            body: ['Roboto', 'sans-serif'],
+          },
+          colors: {
+            'pop-red': '#ee2b2f',
+            'color-accent': '#00aeef',
+            'color-muted': '#ffffff80',
+            'color-border': '#231f20',
+            'color-bg-alt': '#fdf5e6',
+            'color-bg': '#231f20',
+            'color-dots': 'rgba(255, 255, 255, 0.05)',
+          },
+          backgroundImage: {
+            'pop-dots': "radial-gradient(rgba(255, 255, 255, 0.05) 3px, transparent 1px)",
+          },
+          backgroundSize: {
+            'dots-sm': '0.938rem 0.938rem',
+          },
+          spacing: {
+            'section_v': '4rem',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-
 <body>
-
   <!-- ======== HEADER ======== -->
-  <header class="site-header">
-    <div class="container">
+ <div class="bg-color-bg bg-pop-dots bg-dots-sm grid grid-rows-[auto_1fr_auto] min-h-screen">
+   <header class="bg-[#fdf5e6] border-b border-[#231f20]">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
       <!-- TODO: replace "Site Title" with your site name -->
-      <a href="../index.html" class="site-logo"><img src="../images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
-      <nav>
-        <ul class="site-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
+      <a href="../index.html" class="flex items-center">
+  <img
+    src="../images/mosaic_logo.png"
+    alt="The Mosaic Museum Of Art"
+    class="h-10 w-auto object-contain"
+  >
+</a>
+<nav class="hidden md:block">
+  <ul class="flex gap-6 uppercase text-sm tracking-wider">
+    <li><a href="../index.html" class="nav-link hover:text-[#00aeef] transition">Home</a></li>
+    <li><a href="about.html" class="nav-link hover:text-[#00aeef] transition">About</a></li>
+    <li><a href="services.html" class="nav-link hover:text-[#00aeef] transition">Services</a></li>
+    <li><a href="contact.html" class="nav-link hover:text-[#00aeef] transition">Contact</a></li>
+  </ul>
+</nav>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+  ☰
+</button>
+     <ul id="mobileMenu"
+    class="hidden flex flex-col gap-3 mt-4 md:hidden bg-[#fdf5e6] p-4 text-sm md:text-base">
+  <li><a class="nav-link hover:text-[#00aeef]" href="../index.html">Home</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="about.html">About</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="services.html">Services</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="contact.html">Contact</a></li>
+</ul>
+      
     </div>
   </header>
-
-  <!-- ======== MAIN CONTENT ======== -->
-  <main>
-
-    <section>
-      <div class="container">
-        <h1>Contact Us</h1>
-        <div class="grid grid--2-col">
-          <div>
-            <p class="p_textbox">
+   <div class="px-8 py-12 md:px-20 lg:px-72">
+     <!-- ======== MAIN CONTENT ======== -->
+      <main>
+     <section>
+        <h1 class="font-heading text-6xl text-pop-red">Contact Us</h1>
+        <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p>
               General Enquiries
-              <br>
+            <p>
               General Enquiries: exhibitions, opening hours, visitor information:
-              <br>
               info@mosaicmuseum.ac.nz
-              <br>
+            <p>
               +64 7 123 4567
             </p>
-            <p class="p_textbox">
+         </div>
+         <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p>
               Curatorial Department
-              <br>
+            <p>
               Exhibition proposals, Artwork submissions, Research collaboration:
-              <br>
+            <p>
               curatorial@mosaicmuseum.ac.nz
             </p>
-            <p class="p_textbox">
+          </div>
+          <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p>
               Partnerships & Sponsorship
-              <br>
+            <p>
               Corporate partnerships, Sponsorship opportunities, Collaborations:
-              <br>
+            <p>
               partnerships@mosaicmuseum.ac.nz
             </p>
-            <p class="p_textbox">
+          </div>
+          <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p>
               Education & School Programs
-              <br>
+            <p> 
               School visits, workshops, and educational resources:
-              <br>
+            <p>
               education@mosaicmuseum.ac.nz
             </p>
-            <p class="p_textbox">
+          </div>
+          <divc lass="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p>
               Media & Press
-              <br>
+            <p>
               Press releases, interviews, or media enquiries:
-              <br>
+            <p>
               media@mosaicmuseum.ac.nz
             </p>
+          </div>
+          
             <p class="p_textbox">
               Membership & Donations
               <br>
@@ -124,9 +186,8 @@
   </main>
 
   <!-- ======== FOOTER ======== -->
-  <footer class="site-footer">
-    <div class="textbox">
-      <div class="container">
+  <footer class="w-screen w-full bg-color-bg-alt border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+    <div class="flex flex-col items-center text-left bg-color-bg-alt pt-8 pb-8 h-full">
         <!-- TODO: replace "Your Name" with your name -->
         <p>
           &copy; 2026 | DSIGN241 - Assignment 1 | Team 2
@@ -134,14 +195,55 @@
         </p>
         <br>
         <p>
-          <a href="style-guide.html">Style Guide</a>
+          <a href="../pages/style-guide.html">Style Guide</a>
           &nbsp;|&nbsp;
-          <a href="checklist.html">Checklist</a>
+          <a href="../pages/checklist.html">Checklist</a>
         </p>
       </div>
     </div>
   </footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  let open = false;
+  function toggleMenu() 
+  {
+    open = !open;
+    menu.classList.toggle('hidden');
+    btn.style.display = open ? 'none' : 'block';
+  }
+  btn.addEventListener('click', (e) => 
+  {
+    e.stopPropagation(); 
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      if (!menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    }
+  });
+   const links = document.querySelectorAll('.nav-link');
+const currentPath = window.location.pathname;
 
+links.forEach(link => {
+  const href = link.getAttribute('href');
+
+  let cleanHref = href.replace('pages/', '');
+  let cleanPath = currentPath.split('/').pop();
+
+  const isActive =
+    cleanHref === 'index.html'
+      ? cleanPath === '' || cleanPath === 'index.html'
+      : cleanPath === cleanHref;
+
+  if (isActive) {
+    link.classList.add('text-[#00aeef]');
+    link.setAttribute('aria-current', 'page');
+  }
+});
+</script>
 </body>
 
 </html>

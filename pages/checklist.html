@@ -19,6 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <!-- TODO: replace "Site Title" with your site name -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../css/styles.css">
   <title>Checklist — Pop-Art Exhibit Companion</title>
 </head>
@@ -26,18 +27,36 @@
 <body>
 
   <!-- ======== HEADER ======== -->
-  <header class="site-header">
-    <div class="container">
+  <header class="bg-[#fdf5e6] border-b border-[#231f20]">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
       <!-- TODO: replace "Site Title" with your site name -->
-      <a href="../index.html" class="site-logo"><img src="../images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
-      <nav>
-        <ul class="site-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <a href="../index.html" class="flex items-center">
+  <img
+    src="../images/mosaic_logo.png"
+    alt="The Mosaic Museum Of Art"
+    class="h-10 w-auto object-contain"
+  >
+</a>
+<nav class="hidden md:block">
+  <ul class="flex gap-6 uppercase text-sm tracking-wider">
+    <li><a href="../index.html" class="nav-link hover:text-[#00aeef] transition">Home</a></li>
+    <li><a href="about.html" class="nav-link hover:text-[#00aeef] transition">About</a></li>
+    <li><a href="services.html" class="nav-link hover:text-[#00aeef] transition">Services</a></li>
+    <li><a href="contact.html" class="nav-link hover:text-[#00aeef] transition">Contact</a></li>
+  </ul>
+</nav>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+  ☰
+</button>
+     <ul id="mobileMenu"
+    class="hidden flex flex-col gap-3 mt-4 md:hidden bg-[#fdf5e6] p-4 text-sm md:text-base">
+  <li><a class="nav-link hover:text-[#00aeef]" href="../index.html">Home</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="about.html">About</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="services.html">Services</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="contact.html">Contact</a></li>
+</ul>
+      
     </div>
   </header>
 
@@ -68,15 +87,15 @@
         <h2>1. Fonts</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Go to <a href="https://fonts.google.com" target="_blank"
+            <li><label><input type="checkbox" checked> Go to <a href="https://fonts.google.com" target="_blank"
                   rel="noopener">fonts.google.com</a> and choose your typeface(s) — a maximum of two, ideally one — that
                 suit the tone of your organisation.</label></li>
-            <li><label><input type="checkbox" checked=""> Click <strong>Get font → Get embed code → choose
+            <li><label><input type="checkbox" checked> Click <strong>Get font → Get embed code → choose
                   &lt;link&gt;</strong>.
                 Paste the <code>&lt;link&gt;</code> line into the Google Fonts block in every HTML file, replacing the
                 placeholder <code>href</code>. Do not add an <code>@import</code> to <code>styles.css</code>.</label>
             </li>
-            <li><label><input type="checkbox" checked=""> In <code>css/styles.css</code>, update
+            <li><label><input type="checkbox" checked> In <code>css/styles.css</code>, update
                 <code>--font-heading</code> and
                 <code>--font-body</code> with your font name(s). If using one typeface for both, set both variables to
                 the
@@ -87,23 +106,23 @@
         <h2>2. Colours</h2>
         <div class=" textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Update <code>--color-bg</code> — page background.</label></li>
-            <li><label><input type="checkbox" checked=""> Update <code>--color-bg-alt</code> — tinted section background
+            <li><label><input type="checkbox" checked> Update <code>--color-bg</code> — page background.</label></li>
+            <li><label><input type="checkbox" checked> Update <code>--color-bg-alt</code> — tinted section background
                 (add
                 <code>class="section--tinted"</code> to any <code>&lt;section&gt;</code> you want to stand out).</label>
             </li>
-            <li><label><input type="checkbox" checked=""> Update <code>--color-text</code> — main body text.</label>
+            <li><label><input type="checkbox" checked> Update <code>--color-text</code> — main body text.</label>
             </li>
-            <li><label><input type="checkbox" checked=""> Update <code>--color-primary</code> — headings.</label></li>
-            <li><label><input type="checkbox" checked=""> Update <code>--color-secondary</code> — captions, labels,
+            <li><label><input type="checkbox" checked> Update <code>--color-primary</code> — headings.</label></li>
+            <li><label><input type="checkbox" checked> Update <code>--color-secondary</code> — captions, labels,
                 muted
                 text.</label></li>
-            <li><label><input type="checkbox" checked=""> Update <code>--color-accent</code> — links and
+            <li><label><input type="checkbox" checked> Update <code>--color-accent</code> — links and
                 highlights.</label></li>
-            <li><label><input type="checkbox" checked=""> Update <code>--color-muted</code> and
+            <li><label><input type="checkbox" checked> Update <code>--color-muted</code> and
                 <code>--color-border</code> to
                 complement your palette.</label></li>
-            <li><label><input type="checkbox" checked=""> Open <a href="style-guide.html">Style Guide</a> and confirm
+            <li><label><input type="checkbox" checked> Open <a href="style-guide.html">Style Guide</a> and confirm
                 the
                 swatches
                 look right.</label></li>
@@ -113,13 +132,13 @@
         <h2>3. Site identity — every page</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Replace <code>Site Title</code> in the
+            <li><label><input type="checkbox" checked> Replace <code>Site Title</code> in the
                 <code>&lt;title&gt;</code> tag on
                 each page.</label></li>
-            <li><label><input type="checkbox" checked=""> Replace <code>Site Title</code> in the site logo link on each
+            <li><label><input type="checkbox" checked> Replace <code>Site Title</code> in the site logo link on each
                 page.</label>
             </li>
-            <li><label><input type="checkbox" checked=""> Replace <code>Your Name</code> in the footer on each
+            <li><label><input type="checkbox" checked> Replace <code>Your Name</code> in the footer on each
                 page.</label></li>
           </ul>
         </div>
@@ -127,18 +146,18 @@
         <h2>4. Home page</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Write a clear mission statement or value proposition as the
+            <li><label><input type="checkbox" checked> Write a clear mission statement or value proposition as the
                 <code>&lt;h1&gt;</code>.</label></li>
-            <li><label><input type="checkbox" checked=""> Write the hero paragraph: what problem does this organisation
+            <li><label><input type="checkbox" checked> Write the hero paragraph: what problem does this organisation
                 solve, and
                 for whom?</label></li>
-            <li><label><input type="checkbox" checked=""> Replace the hero placeholder with an appropriate
+            <li><label><input type="checkbox" checked> Replace the hero placeholder with an appropriate
                 image.</label>
             </li>
-            <li><label><input type="checkbox" checked=""> Fill in <em>The Problem</em> and <em>Our Solution</em> columns
+            <li><label><input type="checkbox" checked> Fill in <em>The Problem</em> and <em>Our Solution</em> columns
                 from your
                 brief.</label></li>
-            <li><label><input type="checkbox" checked=""> Fill in the three <em>Why It Works</em> benefit cards with
+            <li><label><input type="checkbox" checked> Fill in the three <em>Why It Works</em> benefit cards with
                 specific,
                 grounded reasons.</label></li>
           </ul>
@@ -147,10 +166,10 @@
         <h2>5. About page</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Replace the portrait placeholder with a team or organisation
+            <li><label><input type="checkbox" checked> Replace the portrait placeholder with a team or organisation
                 photo.</label>
             </li>
-            <li><label><input type="checkbox" checked=""> Write the about text: who is behind this organisation, what
+            <li><label><input type="checkbox" checked> Write the about text: who is behind this organisation, what
                 values guide
                 it?</label></li>
           </ul>
@@ -159,14 +178,14 @@
         <h2>6. Services page</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Update the <code>&lt;h1&gt;</code> if "Services" does not fit
+            <li><label><input type="checkbox" checked> Update the <code>&lt;h1&gt;</code> if "Services" does not fit
                 your brief
                 (e.g. "Platform", "How It Works", "Programmes").</label></li>
-            <li><label><input type="checkbox" checked=""> Write the intro paragraph for this page.</label></li>
-            <li><label><input type="checkbox" checked=""> Fill each card with a specific service, feature, or programme
+            <li><label><input type="checkbox" checked> Write the intro paragraph for this page.</label></li>
+            <li><label><input type="checkbox" checked> Fill each card with a specific service, feature, or programme
                 from your
                 brief.</label></li>
-            <li><label><input type="checkbox" checked=""> Add or remove cards as needed. Switch to
+            <li><label><input type="checkbox" checked> Add or remove cards as needed. Switch to
                 <code>.grid--3-col</code> if you
                 have more items.</label></li>
           </ul>
@@ -175,13 +194,13 @@
         <h2>7. Get Involved page</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Update the <code>&lt;h1&gt;</code> to match your call to
+            <li><label><input type="checkbox" checked> Update the <code>&lt;h1&gt;</code> to match your call to
                 action (e.g.
                 "Partner With Us", "Invest", "Volunteer").</label></li>
-            <li><label><input type="checkbox" checked=""> Write copy for each relevant stakeholder group — investors,
+            <li><label><input type="checkbox" checked> Write copy for each relevant stakeholder group — investors,
                 partners,
                 volunteers, or users.</label></li>
-            <li><label><input type="checkbox" checked=""> Replace the placeholder with an appropriate image.</label>
+            <li><label><input type="checkbox" checked> Replace the placeholder with an appropriate image.</label>
             </li>
           </ul>
         </div>
@@ -189,10 +208,10 @@
         <h2>8. Style Guide</h2>
         <div class="textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Write the Imagery description paragraph: what visual style and
+            <li><label><input type="checkbox" checked> Write the Imagery description paragraph: what visual style and
                 mood suits
                 this organisation?</label></li>
-            <li><label><input type="checkbox" checked=""> Confirm that the type specimens and colour swatches correctly
+            <li><label><input type="checkbox" checked> Confirm that the type specimens and colour swatches correctly
                 reflect
                 your
                 design decisions.</label></li>
@@ -202,12 +221,12 @@
         <h2>9. Imagery — all pages</h2>
         <div class=" textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Replace every <code>&lt;div class="placeholder"&gt;</code> with a real
+            <li><label><input type="checkbox" checked> Replace every <code>&lt;div class="placeholder"&gt;</code> with a real
                 <code>&lt;img src="..." alt="..."&gt;</code>.</label></li>
-            <li><label><input type="checkbox" checked=""> Save images in <code>images/</code> and use relative paths
+            <li><label><input type="checkbox" checked> Save images in <code>images/</code> and use relative paths
                 (e.g.
                 <code>../images/photo.jpg</code> from inside <code>pages/</code>).</label></li>
-            <li><label><input type="checkbox" checked=""> Replace <code>images/favicon.svg</code> with your own
+            <li><label><input type="checkbox" checked> Replace <code>images/favicon.svg</code> with your own
                 favicon.</label></li>
           </ul>
         </div>
@@ -215,13 +234,13 @@
         <h2>10. Before you submit</h2>
         <div class=" textbox">
           <ul class="checklist">
-            <li><label><input type="checkbox" checked=""> Validate every page at <a href="https://validator.w3.org" target="_blank"
+            <li><label><input type="checkbox" checked> Validate every page at <a href="https://validator.w3.org" target="_blank"
                   rel="noopener">validator.w3.org</a> — no errors, no warnings.</label></li>
-            <li><label><input type="checkbox" checked=""> Check the site on a narrow screen (mobile) and a wide screen
+            <li><label><input type="checkbox" checked> Check the site on a narrow screen (mobile) and a wide screen
                 (desktop).</label></li>
-            <li><label><input type="checkbox" checked=""> Confirm all links work, including the footer links.</label>
+            <li><label><input type="checkbox" checked> Confirm all links work, including the footer links.</label>
             </li>
-            <li><label><input type="checkbox"> ZIP the contents of <code>site/</code> and submit to Moodle.</label></li>
+            <li><label><input type="checkbox" checked> ZIP the contents of <code>site/</code> and submit to Moodle.</label></li>
           </ul>
         </div>
       </div>
@@ -247,7 +266,48 @@
       </div>
     </div>
   </footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  let open = false;
+  function toggleMenu() 
+  {
+    open = !open;
+    menu.classList.toggle('hidden');
+    btn.style.display = open ? 'none' : 'block';
+  }
+  btn.addEventListener('click', (e) => 
+  {
+    e.stopPropagation(); 
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      if (!menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    }
+  });
+   const links = document.querySelectorAll('.nav-link');
+const currentPath = window.location.pathname;
 
+links.forEach(link => {
+  const href = link.getAttribute('href');
+
+  let cleanHref = href.replace('pages/', '');
+  let cleanPath = currentPath.split('/').pop();
+
+  const isActive =
+    cleanHref === 'index.html'
+      ? cleanPath === '' || cleanPath === 'index.html'
+      : cleanPath === cleanHref;
+
+  if (isActive) {
+    link.classList.add('text-[#00aeef]');
+    link.setAttribute('aria-current', 'page');
+  }
+});
+</script>
 </body>
 
 </html>

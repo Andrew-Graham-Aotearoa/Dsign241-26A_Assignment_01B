@@ -18,88 +18,179 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <!-- TODO: replace "Site Title" with your site name -->
+  <!-- The Stylesheet Commented out to use Tailwind
+  <link rel="stylesheet" href="../css/styles.css"> -->
   <title>About — Pop-Art Exhibit Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#ee2b2f',
+            'brand-bg': '#231f20',
+          },
+          fontFamily: {
+            heading: ['Bangers', 'serif'],
+            body: ['Roboto', 'sans-serif'],
+          },
+          colors: {
+            'pop-red': '#ee2b2f',
+            'color-accent': '#00aeef',
+            'color-muted': '#ffffff80',
+            'color-border': '#231f20',
+            'color-bg-alt': '#fdf5e6',
+            'color-bg': '#231f20',
+            'color-dots': 'rgba(255, 255, 255, 0.05)',
+          },
+          backgroundImage: {
+            'pop-dots': "radial-gradient(rgba(255, 255, 255, 0.05) 3px, transparent 1px)",
+          },
+          backgroundSize: {
+            'dots-sm': '0.938rem 0.938rem',
+          },
+          spacing: {
+            'section_v': '4rem',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
 <body>
-
   <!-- ======== HEADER ======== -->
-  <header class="site-header">
-    <div class="container">
+  <div class="bg-color-bg bg-pop-dots bg-dots-sm grid grid-rows-[auto_1fr_auto] min-h-screen">
+     <header class="bg-[#fdf5e6] border-b border-[#231f20]">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
       <!-- TODO: replace "Site Title" with your site name -->
-      <a href="../index.html" class="site-logo"><img src="../images/mosaic_logo.png" alt="The Mosiac Museum Of Art"></a>
-      <nav>
-        <ul class="site-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <a href="../index.html" class="flex items-center">
+  <img
+    src="../images/mosaic_logo.png"
+    alt="The Mosaic Museum Of Art"
+    class="h-10 w-auto object-contain"
+  >
+</a>
+<nav class="hidden md:block">
+  <ul class="flex gap-6 uppercase text-sm tracking-wider">
+    <li><a href="../index.html" class="nav-link hover:text-[#00aeef] transition">Home</a></li>
+    <li><a href="about.html" class="nav-link hover:text-[#00aeef] transition">About</a></li>
+    <li><a href="services.html" class="nav-link hover:text-[#00aeef] transition">Services</a></li>
+    <li><a href="contact.html" class="nav-link hover:text-[#00aeef] transition">Contact</a></li>
+  </ul>
+</nav>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+  ☰
+</button>
+     <ul id="mobileMenu"
+    class="hidden flex flex-col gap-3 mt-4 md:hidden bg-[#fdf5e6] p-4 text-sm md:text-base">
+  <li><a class="nav-link hover:text-[#00aeef]" href="../index.html">Home</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="about.html">About</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="services.html">Services</a></li>
+  <li><a class="nav-link hover:text-[#00aeef]" href="contact.html">Contact</a></li>
+</ul>
+      
     </div>
   </header>
-
-  <!-- ======== MAIN CONTENT ======== -->
-  <main>
-
-    <section>
-      <div class="container">
-        <h1>About Us</h1>
-        <div class="grid grid--sidebar">
-          <div>
-            <div class="placeholder placeholder--portrait"><img src="../images/Mosaic_Museum_3-4.png"
-                alt="Mosaic Museum Exterior"></div>
-          </div>
-          <div>
-            <div class="textbox">
-              <p>
-                About the Organisation:
-                Museum Exhibit Companion was created to make exhibitions more accessible and engaging
-                by reducing information overload while preserving depth. It is guided by values of clarity,
-                inclusivity, and layered learning, helping visitors connect with content at their own level.
-              </p>
+    
+    <div class="px-8 py-12 md:px-20 lg:px-72">
+      <!-- ======== MAIN CONTENT ======== -->
+      <main>
+        <section>
+          <h1 class="font-heading text-6xl text-pop-red">About Us</h1>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 py-section_v">
+            <div class="w-full">
+              <img src="../images/Mosaic_Museum_3-4.png" alt="Mosaic Museum Exterior"
+                class="border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             </div>
-            <div class="textbox">
-              <p>
-                About the Team:
-                Team 2, Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, and Toby Childs,
-                brings together strengths in design, visual communication, and research.
-                The team conducted observation and discovery work in real museum-like environments
-                to understand how visitors move, engage, and become overwhelmed.
-                By combining user research with design thinking, they developed a companion that
-                balances educational depth with ease of use. Their work focuses on creating accessible
-                media and meaningful content that supports children, casual visitors,
-                and more knowledgeable audiences.
-              </p>
+            <div class="md:col-span-2 flex flex-col gap-6">
+              <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <p>
+                  About the Organisation:
+                  Museum Exhibit Companion was created to make exhibitions more accessible and engaging
+                  by reducing information overload while preserving depth. It is guided by values of clarity,
+                  inclusivity, and layered learning, helping visitors connect with content at their own level.
+                </p>
+              </div>
+              <div class="bg-color-bg-alt p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <p>
+                  About the Team:
+                  Team 2, Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, and Toby Childs,
+                  brings together strengths in design, visual communication, and research.
+                  The team conducted observation and discovery work in real museum-like environments
+                  to understand how visitors move, engage, and become overwhelmed.
+                  By combining user research with design thinking, they developed a companion that
+                  balances educational depth with ease of use. Their work focuses on creating accessible
+                  media and meaningful content that supports children, casual visitors,
+                  and more knowledgeable audiences.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
+        </section>
+      </main>
+    </div>
   <!-- ======== FOOTER ======== -->
-  <footer class="site-footer">
-    <div class="textbox">
-      <div class="container">
-        <!-- TODO: replace "Your Name" with your name -->
-        <p>
-          &copy; 2026 | DSIGN241 - Assignment 1 | Team 2
-          <br> Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, Toby Childs
-        </p>
+  <footer class="w-screen w-full bg-color-bg-alt border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+    <div class="flex flex-col items-center text-left bg-color-bg-alt pt-8 pb-8 h-full">
+      <!-- TODO: replace "Your Name" with your name -->
+      <p>
+        &copy; 2026 | DSIGN241 - Assignment 1 | Team 2
         <br>
-        <p>
-          <a href="style-guide.html">Style Guide</a>
-          &nbsp;|&nbsp;
-          <a href="checklist.html">Checklist</a>
-        </p>
-      </div>
+        Andrew Graham, Mia Wang, Rowan Lea, Seven Liu, Toby Childs
+      </p>
+      <br>
+      <p>
+        <a href="style-guide.html">Style Guide</a>
+        &nbsp;|&nbsp;
+        <a href="checklist.html">Checklist</a>
+      </p>
     </div>
   </footer>
+  </div>
+  <script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  let open = false;
+  function toggleMenu() 
+  {
+    open = !open;
+    menu.classList.toggle('hidden');
+    btn.style.display = open ? 'none' : 'block';
+  }
+  btn.addEventListener('click', (e) => 
+  {
+    e.stopPropagation(); 
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      if (!menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    }
+  });
+   const links = document.querySelectorAll('.nav-link');
+const currentPath = window.location.pathname;
 
+links.forEach(link => {
+  const href = link.getAttribute('href');
+
+  let cleanHref = href.replace('pages/', '');
+  let cleanPath = currentPath.split('/').pop();
+
+  const isActive =
+    cleanHref === 'index.html'
+      ? cleanPath === '' || cleanPath === 'index.html'
+      : cleanPath === cleanHref;
+
+  if (isActive) {
+    link.classList.add('text-[#00aeef]');
+    link.setAttribute('aria-current', 'page');
+  }
+});
+</script>
 </body>
 
 </html>
