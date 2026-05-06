@@ -2,6 +2,7 @@ tailwind.config = {
     theme: {
         extend: {
             // colors: {
+            //duplicate colors- Probably delete these
             //     'brand-primary': '#ee2b2f',
             //     'brand-bg': '#231f20',
             // },
