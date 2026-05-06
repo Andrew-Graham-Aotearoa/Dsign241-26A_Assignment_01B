@@ -1,9 +1,0 @@
-{
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "tailwind",
-    "html": "html"
-  },
-//   "files.associations": {
-//     "index-bootstrap.html": "html" 
-//   }
-}
